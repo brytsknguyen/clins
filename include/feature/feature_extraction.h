@@ -20,16 +20,20 @@
 #ifndef FEATURE_EXTRATION_H
 #define FEATURE_EXTRATION_H
 
-#include <clins/feature_cloud.h>
-#include <feature/voxel_filter.h>
 #include <ros/ros.h>
 #include <sensor_data/lidar_data.h>
+#include <sensor_data/calibration.hpp>
 #include <sensor_msgs/PointCloud2.h>
-#include <utils/tic_toc.h>
-#include <yaml-cpp/yaml.h>
+
+#include <pcl/kdtree/impl/kdtree_flann.hpp>
 #include <opencv2/core/eigen.hpp>
 #include <opencv2/opencv.hpp>
-#include <sensor_data/calibration.hpp>
+
+#include <yaml-cpp/yaml.h>
+
+#include <clins/feature_cloud.h>
+#include <feature/voxel_filter.h>
+#include <utils/tic_toc.h>
 
 namespace clins {
 

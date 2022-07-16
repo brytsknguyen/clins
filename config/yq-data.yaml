@@ -10,7 +10,7 @@ min_distance: 1.0
 max_distance: 100.0
 
 ## Bag Param
-bag_path: /media/ha/ORICO/clins_dataset/yq-skg-around.bag
+bag_path: /home/tmn/DATASETS/yq-skg-around.bag
 imu_topic: /imu1/data
 gps_topic: /fix
 bag_start: 0

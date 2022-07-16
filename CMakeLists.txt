@@ -6,7 +6,7 @@ project(clins)
 #set(CMAKE_CXX_FLAGS " -march=${CXX_MARCH} -O3")
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_BUILD_TYPE "RELEASE")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -msse4.2")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -msse4.2 -Wfatal-errors")
 #add_definitions(-O3 -msse -msse2 -msse3 -msse4 -msse4.1 -msse4.2)
 
 find_package(OpenMP)
@@ -33,9 +33,10 @@ find_package(catkin REQUIRED COMPONENTS
 )
 
 find_package(Eigen3)
+find_package(PCL REQUIRED)
 find_package(OpenCV REQUIRED)
-find_package(Ceres REQUIRED)
-find_package(Sophus REQUIRED )
+find_package(Ceres 2.1.0 PATHS "/home/tmn/Libraries/ceres-solver-2.1.0/build/" NO_DEFAULT_PATH REQUIRED )
+find_package(Sophus PATHS "/home/tmn/Libraries/Sophus/build" NO_DEFAULT_PATH REQUIRED )
 
 find_package(yaml-cpp REQUIRED)
 # find_package(PkgConfig REQUIRED)
@@ -86,7 +87,11 @@ list(APPEND thirdparty_libraries
         ${OpenCV_LIBS}
         ${YAML_CPP_LIBRARIES}
         ceres
+        Sophus::Sophus
 )
+
+message("ceres dir ${Ceres_DIR}")
+message("sophus dir ${Sophus_DIR}")
 
 ################# Node ###################
 
