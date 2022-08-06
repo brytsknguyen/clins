@@ -4,9 +4,7 @@
    <arg name="rviz" default="true" />
    <arg name="config_name"    default="/config/yq-data.yaml" />
 
-  <!-- <node pkg="clins" type="clins_offline_node" name="clins_offline_node"
-         output="screen" clear_params="true" required="true" launch-prefix="gdb -ex run &#45;&#45;args">-->
-   <node pkg="clins" type="clins_offline_node" name="clins_offline_node" output="screen" >
+   <node pkg="clins" type="clins_offline_node" name="clins_offline_node" output="screen" required="true" >
       <param name="config_name" type="string" value="$(arg config_name)" />
    </node>
 
